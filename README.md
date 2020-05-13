@@ -57,10 +57,10 @@ MAC: 02:42:c6:0a:00:03                |                            MAC eth0: 02:
 Fiecare container execută la secțiunea command în [docker-compose.yml](https://github.com/senisioi/tema5/blob/master/docker-compose.yml) un shell script prin care se configurează rutele. [Cient](https://github.com/senisioi/tema5/blob/master/src/client.sh) și [server](https://github.com/senisioi/tema5/blob/master/src/server.sh) setează ca default gateway pe router (anulând default gateway din docker). În plus, adaugă ca nameserver 8.8.8.8, dacă vreți să testați [DNS spoofing](https://github.com/senisioi/computer-networks/tree/2020/capitolul3#scapy_dns_spoofing). [Middle](https://github.com/senisioi/tema5/blob/master/src/middle.sh) setează `ip_forwarding=1` și regula: `iptables -t nat -A POSTROUTING -j MASQUERADE` pentru a permite mesajelor care sunt [forwardate de el să iasă din rețeaua locală](https://askubuntu.com/questions/466445/what-is-masquerade-in-the-context-of-iptables). 
 
 
-Rulati procesul de otrăvire a tabelei ARP din diagrama de mai sus pentru containerele server și router în mod constant, cu un time.sleep de câteva secunde pentru a nu face flood de pachete. (Hint: puteți folosi două [thread-uri](https://realpython.com/intro-to-python-threading/#starting-a-thread) pentru otrăvirea routerului și a serverului).
+Rulati procesul de otrăvire a tabelei ARP din diagrama de mai sus pentru containerele `server` și `router` în mod constant, cu un time.sleep de câteva secunde pentru a nu face flood de pachete. (Hint: puteți folosi două [thread-uri](https://realpython.com/intro-to-python-threading/#starting-a-thread) pentru otrăvirea routerului și a serverului).
 
 
-Pe lângă print-urile și mesajele de logging din programele voastre, rulați în containerul middle: `tcpdump -SntvXX -i any` iar pe server faceți un `wget http://moodle.fmi.unibuc.ro`. Dacă middle este capabil să vadă conținutul HTML din request-ul server-ului, înseamnă că atacul a reușit. Altfel încercați să faceți clean la cache-ul ARP al serverului.
+Pe lângă print-urile și mesajele de logging din programele voastre, rulați în containerul middle: `tcpdump -SntvXX -i any` iar pe `server` faceți un `wget http://moodle.fmi.unibuc.ro`. Dacă middle este capabil să vadă conținutul HTML din request-ul server-ului, înseamnă că atacul a reușit. Altfel încercați să faceți clean la cache-ul ARP al serverului.
 
 
 ## 2. TCP Hijacking (5%)
