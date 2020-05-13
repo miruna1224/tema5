@@ -1,4 +1,4 @@
-hi # Tema 5
+# Tema 5
 
 ## Informații temă
 **Deadline**: **25 iunie 2020** 
