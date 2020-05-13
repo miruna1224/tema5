@@ -1,9 +1,9 @@
-# Tema 5
+hi # Tema 5
 
 ## Informații temă
 **Deadline**: **25 iunie 2020** 
 
-Pentru a vă înscrie folosiți acest link: [lolo](https://lolo).
+Pentru a vă înscrie folosiți acest link: [https://classroom.github.com/g/32uTw0NR](https://classroom.github.com/g/32uTw0NR).
 
 Tema se va rezolva în echipe de maxim două persoane iar punctajul temei este 10% din nota finală.
 Veți fi evaluați individual în funcție de commit-uri în repository prin `git blame` și `git-quick-stats -a`. Doar utilizatorii care apar cu modificări în repository vor fi punctați (în funcție de modificările pe care le fac).
