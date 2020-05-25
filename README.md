@@ -32,23 +32,23 @@ Arhitectura containerelor este definită aici, împreună cu schema prin care `m
 
 ```
             MIDDLE------------\
-        subnet2: 198.10.0.3    \
+        subnet2: 198.7.0.3     \
         MAC: 02:42:c6:0a:00:02  \
                forwarding        \ 
-               /                  \
-              /                    \
-Poison ARP 198.10.0.2 is-at         Poison ARP 198.10.0.1 is-at 
+              /                   \
+             /                     \
+Poison ARP 198.7.0.1 is-at         Poison ARP 198.7.0.2 is-at 
            02:42:c6:0a:00:02         |         02:42:c6:0a:00:02
            /                         |
           /                          |
          /                           |
         /                            |
     SERVER <---------------------> ROUTER <---------------------> CLIENT
-net2: 198.10.0.2                      |                           net1: 172.10.0.2
-MAC: 02:42:c6:0a:00:03                |                            MAC eth0: 02:42:ac:0a:00:02
-                           subnet1:  172.10.0.1
+net2: 198.7.0.2                      |                           net1: 172.7.0.2
+MAC: 02:42:c6:0a:00:03               |                            MAC eth0: 02:42:ac:0a:00:02
+                           subnet1:  172.7.0.1
                            MAC eth0: 02:42:ac:0a:00:01
-                           subnet2:  198.10.0.1
+                           subnet2:  198.7.0.1
                            MAC eth1: 02:42:c6:0a:00:01
                            subnet1 <------> subnet2
                                  forwarding
